@@ -9,9 +9,13 @@ def encrypt(t = text, s = shift):
     result = ""
 
     for l in t:
-        position = alphabet.index(l)
-        new = alphabet[position + s]
-        result += new
+        if l not in alphabet:
+            new = l
+            result += new
+        else:
+            position = alphabet.index(l)
+            new = alphabet[position + s]
+            result += new
 
     print(result)
 
@@ -19,9 +23,13 @@ def decrypt(t = text, s = shift):
     result = ""
 
     for l in t:
-        position = alphabet.index(l)
-        new = alphabet[position - s]
-        result += new
+        if l not in alphabet:
+            new = l
+            result += new
+        else:
+            position = alphabet.index(l)
+            new = alphabet[position - s]
+            result += new
 
     print(result)
 
